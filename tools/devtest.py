@@ -18,7 +18,7 @@ import sys
 import time
 
 HDC = os.environ.get('HDC', r'D:\Tools\DevEco Studio\sdk\default\openharmony\toolchains\hdc.exe')
-BUNDLE = 'com.example.matecalc'
+BUNDLE = 'com.neuohos.matecalc'
 
 KEYS = {
     '0': [2000], '1': [2001], '2': [2002], '3': [2003], '4': [2004], '5': [2005], '6': [2006], '7': [2007],

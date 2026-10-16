@@ -1,6 +1,6 @@
 {
   "app": {
-    "bundleName": "com.example.matecalc",
+    "bundleName": "com.neuohos.matecalc",
     "vendor": "mate",
     "versionCode": 1028000,
     "versionName": "1.28.0",
