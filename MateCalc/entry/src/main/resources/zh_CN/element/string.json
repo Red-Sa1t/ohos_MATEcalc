@@ -1,0 +1,32 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "MATE 计算器"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "具有财务和科学模式的计算器。"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "计算器"
+    },
+    {
+      "name": "internet_reason",
+      "value": "下载货币汇率"
+    },
+    {
+      "name": "about_license",
+      "value": "许可证"
+    },
+    {
+      "name": "about_credits",
+      "value": "致谢"
+    },
+    {
+      "name": "help_operators",
+      "value": "运算符"
+    }
+  ]
+}

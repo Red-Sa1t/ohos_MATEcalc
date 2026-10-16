@@ -1,0 +1,6 @@
+{
+  "name": "libmatecalc.so",
+  "types": "./Index.d.ts",
+  "version": "1.0.0",
+  "description": "MATE Calculator engine (GMP/MPFR/MPC) N-API bindings"
+}

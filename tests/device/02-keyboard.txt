@@ -1,0 +1,77 @@
+click 模式
+sleep 0.4
+click 基本
+sleep 1
+# Keyboard input (math-display.c)
+keys 2070
+type 12+3*4
+expect 12+3×4
+keys 2054
+expect 24
+type /2
+keys 2054
+expect 12
+keys 2070
+expect 
+type 2**10
+expect 2^10
+keys 2054
+expect 1024
+keys 2070
+type 7-2
+expect 7−2
+keys 2055
+keys 2055
+expect 7
+# arrows + insert
+type 89
+keys 2014
+keys 2014
+type 5
+expect 7589
+# Ctrl+A then type replaces
+keys 2072 2017
+type 3
+expect 3
+# Ctrl+P pi, Ctrl+R root, Ctrl+Z undo
+keys 2070
+keys 2072 2032
+expect π
+keys 2072 2034
+expect π√
+keys 2072 2042
+expect π
+# Ctrl+digit superscript, Alt+digit subscript
+keys 2070
+type 2
+keys 2072 2003
+expect 2³
+keys 2054
+expect 8
+keys 2070
+type 1010
+keys 2045 2002
+expect 1010₂
+keys 2054
+expect 10
+# Ctrl+E exponent then digits are superscript
+keys 2070
+type 3
+keys 2072 2021
+type 2
+expect 3×10²
+keys 2054
+expect 300
+# Ctrl+F factorize
+keys 2070
+type 360
+keys 2072 2022
+sleep 0.5
+expect 2^3 × 3^2 × 5
+# Escape clears; Shift+Delete clears
+keys 2047 2071
+expect 
+# unknown variable status
+type foo
+keys 2054
+status 未知变量“foo”

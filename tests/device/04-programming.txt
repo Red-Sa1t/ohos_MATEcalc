@@ -1,0 +1,57 @@
+click 模式
+sleep 0.4
+click 编程
+sleep 1
+# Programming mode (assumes the app is in programming mode, value 255)
+keys 2070
+type 255
+keys 2054
+expect 255
+# Ctrl+H -> hex, Ctrl+B -> binary, Ctrl+O -> octal, Ctrl+D -> decimal
+keys 2072 2024
+expect FF
+keys 2072 2018
+expect 11111111
+keys 2072 2031
+expect 377
+keys 2072 2020
+expect 255
+keys 2072 2024
+keys 2070
+click F
+click F
+click AND
+type 0
+click F
+click =
+expect F
+keys 2070
+click A
+click XOR
+type 5
+click =
+expect F
+keys 2070
+type 5
+click OR
+click A
+click =
+expect F
+keys 2070
+click NOT
+type 0
+click =
+expect FFFFFFFFFFFFFFFF
+keys 2070
+click twos
+type 1
+click =
+expect FFFFFFFFFFFFFFFF
+keys 2070
+type 1
+type 0
+click mod
+type 3
+click =
+expect 1
+keys 2072 2020

@@ -1,0 +1,32 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "MATE Calculator"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "Calculator with financial and scientific modes."
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "Calculator"
+    },
+    {
+      "name": "internet_reason",
+      "value": "Download currency exchange rates"
+    },
+    {
+      "name": "about_license",
+      "value": "License"
+    },
+    {
+      "name": "about_credits",
+      "value": "Credits"
+    },
+    {
+      "name": "help_operators",
+      "value": "Operators"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+# Upstream mate-calc checkout (reference only, see README)
+/upstream/
+# Agent skills provided for the migration work
+/skills/
+
+# Third-party sources and intermediate build trees (third_party/build-mp.sh recreates them)
+/third_party/src/
+/third_party/build/
+/third_party/tmp/
+/third_party/ndk
+/third_party/*.log
+# Keep the prebuilt static libraries, drop libtool/pkg-config metadata with absolute paths
+/third_party/prebuilt/*/lib/*.la
+/third_party/prebuilt/*/lib/pkgconfig/
+
+# Host test build output
+/MateCalc/entry/src/main/cpp/tests/build/
+
+# Python
+__pycache__/
+/third_party/*.tmp
+/third_party/prebuilt/*/share/

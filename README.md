@@ -1,0 +1,38 @@
+# MATE Calculator for HarmonyOS PC
+
+Port of [MATE Calculator](https://github.com/mate-desktop/mate-calc) 1.28.0
+(upstream commit `2b63722`) to HarmonyOS PC (2in1). The arbitrary-precision
+core (MPFR/MPC, expression parser, units, currencies, financial functions) is
+the upstream C code built with the OpenHarmony NDK; the GTK user interface is
+rewritten in ArkUI. Licensed under the GNU GPL v2 or later, like upstream.
+
+| Path | Contents |
+|---|---|
+| `MateCalc/` | DevEco Studio project (`com.example.matecalc`, API 23–24) |
+| `MateCalc/entry/src/main/cpp/core` | upstream C core with minimal changes (marked "HarmonyOS port") |
+| `MateCalc/entry/src/main/cpp/compat` | small GLib/GObject compatibility layer |
+| `MateCalc/entry/src/main/cpp/engine` | GTK-free port of `math-equation.c` (display, undo, history, …) |
+| `MateCalc/entry/src/main/cpp/napi_calc.cpp` | N-API bindings (`libmatecalc.so`) |
+| `MateCalc/entry/src/main/cpp/tests` | upstream test suites + port tests, run on a Linux host |
+| `MateCalc/entry/src/main/ets` | ArkUI window, button panels, dialogs, settings, i18n |
+| `third_party/` | GMP/MPFR/MPC cross-build script and prebuilt static libraries |
+| `tools/` | `po2json.py` (upstream translations → rawfile JSON), icon generator, device test driver |
+| `tests/device/` | on-device test scenarios for `tools/devtest.py` |
+| `docs/migration-plan.md` | research, plan, progress log and verification results |
+
+## Build
+
+1. Install DevEco Studio 6.1+ and set `DEVECO_HOME` to its directory.
+2. The prebuilt GMP/MPFR/MPC libraries are committed. To rebuild them, run
+   `third_party/build-mp.sh` with MSYS2 bash (see the script header).
+3. `cd MateCalc && devecocli build` (or open the project in DevEco Studio).
+   Signing is local: run `devecocli signature generate` once per machine.
+
+## Tests
+
+- Host (Linux/WSL with gcc and gmp/mpfr/mpc development files):
+  `make -C MateCalc/entry/src/main/cpp/tests test`
+- Device: `python tools/devtest.py run tests/device/*.txt` with the app running.
+
+To fetch the upstream sources for reference:
+`git clone https://github.com/mate-desktop/mate-calc upstream/mate-calc && git -C upstream/mate-calc checkout 2b63722`
